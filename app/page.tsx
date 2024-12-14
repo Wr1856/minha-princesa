@@ -21,12 +21,12 @@ export default function Home() {
   const imagesWithMessages = [
     {
       src: "https://cdn.discordapp.com/attachments/1276690702083821588/1276691173938823332/SORRISO.png?ex=675e1acf&is=675cc94f&hm=43df8dee7f2c90a26f06adafbf38af8b72b18d5bf114ca6134b5c1bf9c5dd34b&",
-      alt: "Com muito esforço eu tenho você sorrindo, muito esforço mesmo, mas valeu a pena, que sorriso perfeito! ❤️",
+      alt: "foto 1",
       message: "Com muito esforço eu tenho você sorrindo, muito esforço mesmo, mas valeu a pena, que sorriso perfeito! ❤️",
     },
     {
       src: "https://cdn.discordapp.com/attachments/1276690702083821588/1276691068762718262/FOFINHA.jpg?ex=675e1ab6&is=675cc936&hm=8d9c3f864948210245d871499a7bfe24470bd8758e062f82fc3878b362846246&",
-      alt: "Essa foto é incrivel e mostra seu lado bobo de ser, acho super engraçada e me passar uma certa tranquilidade ❤️",
+      alt: "foto 2",
       message: "Essa foto é incrivel e mostra seu lado bobo de ser, acho super engraçada e me passar uma certa tranquilidade ❤️",
     },
     {
@@ -317,25 +317,37 @@ export default function Home() {
     </a>
   </div>
 )}
+{/* Fase de Fotos com Mensagens */}
 {phase === 6 && (
-  <div className="flex flex-col items-center justify-center min-h-screen space-y-8">
-    <h1 className="text-4xl font-bold text-[#887D6E] text-center">
+  <div className="flex flex-col items-center justify-center min-h-screen bg-pink-light p-6">
+    {/* Título */}
+    <h1 className="text-4xl font-bold text-[#C85C5C] text-center mb-8">
       Pequenos detalhes que me fazem te admirar ainda mais
     </h1>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    {/* Galeria de Imagens */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {imagesWithMessages.map((item, index) => (
-        <div key={index} className="flex flex-col items-center space-y-4">
-          <img
-            src={item.src}
-            alt={item.alt}
-            className="w-full h-auto rounded-lg shadow-lg transition-transform duration-500 hover:scale-105"
-          />
-          <p className="text-xl text-[#B8B8B8] text-center">{item.message}</p>
+        <div key={index} className="flex flex-col items-center space-y-4 bg-white rounded-lg shadow-md p-4">
+          {/* Imagem */}
+          <div className="w-full aspect-square overflow-hidden rounded-md">
+            <img
+              src={item.src}
+              alt={item.alt}
+              className="w-full h-full object-cover"
+            />
+          </div>
+          {/* Mensagem */}
+          <p className="text-center text-lg text-[#4A2F35]">
+            {item.message}
+          </p>
         </div>
       ))}
     </div>
   </div>
 )}
+
+
 
 {/* Fase 7: Carta com Tema Romântico */}
 {phase === 7 && (

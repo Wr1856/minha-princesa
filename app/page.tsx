@@ -18,6 +18,40 @@ export default function Home() {
   const [showFinalMessage, setShowFinalMessage] = useState(false); // Exibição da mensagem final
   const [emojiList, setEmojiList] = useState<Emoji[]>([]); // Lista de emojis flutuantes
 
+  const imagesWithMessages = [
+    {
+      src: "https://cdn.discordapp.com/attachments/1276690702083821588/1276691173938823332/SORRISO.png?ex=675e1acf&is=675cc94f&hm=43df8dee7f2c90a26f06adafbf38af8b72b18d5bf114ca6134b5c1bf9c5dd34b&",
+      alt: "Com muito esforço eu tenho você sorrindo, muito esforço mesmo, mas valeu a pena, que sorriso perfeito! ❤️",
+      message: "Com muito esforço eu tenho você sorrindo, muito esforço mesmo, mas valeu a pena, que sorriso perfeito! ❤️",
+    },
+    {
+      src: "https://cdn.discordapp.com/attachments/1276690702083821588/1276691068762718262/FOFINHA.jpg?ex=675e1ab6&is=675cc936&hm=8d9c3f864948210245d871499a7bfe24470bd8758e062f82fc3878b362846246&",
+      alt: "Essa foto é incrivel e mostra seu lado bobo de ser, acho super engraçada e me passar uma certa tranquilidade ❤️",
+      message: "Essa foto é incrivel e mostra seu lado bobo de ser, acho super engraçada e me passar uma certa tranquilidade ❤️",
+    },
+    {
+      src: "https://cdn.discordapp.com/attachments/1276690702083821588/1276691116154028145/GATINHA.jpg?ex=675e1ac1&is=675cc941&hm=a4217d1bdb525ebb4eb2ba77379b3152578c52b93bbc20dbab54cedc435497b0&",
+      alt: "Linda, Fofa, Perfeita cada detalhe em você é unico não tem como não adimirar sua beleza mesmo não sendo tão importante pra mim e vc sabe! ❤️",
+      message: "Linda, Fofa, Perfeita cada detalhe em você é unico não tem como não adimirar sua beleza mesmo não sendo tão importante pra mim e vc sabe! ❤️",
+    },
+    {
+      src: "https://cdn.discordapp.com/attachments/1276690702083821588/1276691171166392370/SANGUE.jpg?ex=675e1ace&is=675cc94e&hm=e63116416efdb0408246d2e1de1acaa998939346afb10347e69de3b09f006c38&",
+      alt: "Nao tive nos seus momentos de dor anteriores, mas farei meu melhor para que em todos os outros seja o primeiro a te dar a mão ❤️",
+      message: "Nao tive nos seus momentos de dor anteriores, mas farei meu melhor para que em todos os outros seja o primeiro a te dar a mão ❤️",
+    },
+    {
+      src: "https://cdn.discordapp.com/attachments/1276690702083821588/1276691117274038313/GRR.jpg?ex=675e1ac2&is=675cc942&hm=00a2862ce386a6fdab96bab3d3a144c9d6e0ffb8dfbb01cb9911eebfedbee8c6&",
+      alt: "Preciso dizer mais algo essa foto é perfeita mostra, mesmo no momento mais dificil, mesmo depois de uma briga feia vc tava sendo vc ❤️",
+      message: "Preciso dizer mais algo essa foto é perfeita mostra, mesmo no momento mais dificil, mesmo depois de uma briga feia vc tava sendo vc ❤️",
+    },
+    {
+      src: "https://cdn.discordapp.com/attachments/1276690702083821588/1280372108010061835/SPOILER_IMG_2530.jpg?ex=675e4ff2&is=675cfe72&hm=edcb457d5565647a778060ccf7ccc146d98a56daabc419985b8b10e9b6e6fd25&",
+      alt: "Poderia descrever mais de 200 imagens falando o detalhe de cada uma de como vc me cativa, mas assim como essa nem tudo precisa ter motivo ❤️",
+      message: "Poderia descrever mais de 200 imagens falando o detalhe de cada uma de como vc me cativa, mas assim como essa nem tudo precisa ter motivo ❤️",
+    },
+  ];
+  
+
   // Lista de emojis
   const emojis = ['🎉', '🎊', '💖', '✨', '💫', '🎁'];
 
@@ -166,7 +200,7 @@ export default function Home() {
 
   // Controle de clique para mudar fases
   const handleClick = () => {
-    if (phase < 5) { // Aumenta o limite para 5
+    if (phase < 7) { // Aumenta o limite para 5
       setPhase(phase + 1);
       if (phase === 3) {
         setCurrentIndex(0); // Reseta frases ao entrar na fase 4
@@ -174,7 +208,6 @@ export default function Home() {
     }
   };
   
-
   return (
     <div
       className={`flex flex-col items-center justify-center min-h-screen ${
@@ -280,10 +313,65 @@ export default function Home() {
       href="#"
       className="text-xl text-[#2D1B1B] underline hover:text-[#1B2D35] transition-colors duration-500"
     >
-      Jogue a visual novel que eu criei para você 🌟 (Link fictício)
+      Jogue a visual novel que eu criei para você 🌟
     </a>
   </div>
 )}
+{phase === 6 && (
+  <div className="flex flex-col items-center justify-center min-h-screen space-y-8">
+    <h1 className="text-4xl font-bold text-[#887D6E] text-center">
+      Pequenos detalhes que me fazem te admirar ainda mais
+    </h1>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {imagesWithMessages.map((item, index) => (
+        <div key={index} className="flex flex-col items-center space-y-4">
+          <img
+            src={item.src}
+            alt={item.alt}
+            className="w-full h-auto rounded-lg shadow-lg transition-transform duration-500 hover:scale-105"
+          />
+          <p className="text-xl text-[#B8B8B8] text-center">{item.message}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+)}
+
+{/* Fase 7: Carta com Tema Romântico */}
+{phase === 7 && (
+  <div className="flex items-center justify-center min-h-screen bg-pink-light p-10">
+    {/* Container da Carta */}
+    <div className="relative bg-white rounded-3xl shadow-2xl p-12 max-w-4xl w-full border-8 border-[#FFC1D6]">
+      {/* Rosa no lado esquerdo */}
+      <img
+        src="https://cdn.discordapp.com/attachments/1276690702083821588/1317352560239186071/download.png?ex=675e5fad&is=675d0e2d&hm=b5b57e7213b8f46a545e5c6918fb8b0e49f8e4e2338d8846dea04f253e7f13e1&" // Atualize com o link da rosa
+        alt="Rosa"
+        className="absolute -top-12 -left-12 w-80 h-auto"
+      />
+
+      {/* Texto da Carta */}
+      <div className="text-center">
+        <h1 className="text-5xl font-bold text-[#C85C5C] mb-6">
+          Uma ultima mensagem pra ti gatinha 💌
+        </h1>
+        <p className="text-2xl leading-relaxed font-serif text-[#4A2F35]">
+         Espero que possamos superar todos os desafios e fortalecer nosso relacionamento a cada dia, porque, sinceramente, eu não consigo imaginar minha vida sem você, de fato eu posso ser chato, babaca, idota entre outras coisas que vc me chama com raiva mas sempre é pensando no teu melhor mesmo que nao aparente!
+        </p>
+        <p className="text-2xl leading-relaxed font-serif text-[#4A2F35]">
+         ASS. do teu amor💖
+        </p>
+      </div>
+
+      {/* Rosa no lado direito */}
+      <img
+        src="https://cdn.discordapp.com/attachments/1276690702083821588/1317352560239186071/download.png?ex=675e5fad&is=675d0e2d&hm=b5b57e7213b8f46a545e5c6918fb8b0e49f8e4e2338d8846dea04f253e7f13e1&" // Atualize com o link da rosa
+        alt="Rosa"
+        className="absolute -bottom-12 -right-12 w-80 h-auto"
+      />
+    </div>
+  </div>
+)}
+
 
     </div>
   );

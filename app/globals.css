@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @keyframes fall {
   0% {
     transform: translateY(-100%);
@@ -10,6 +9,12 @@
   100% {
     transform: translateY(100vh);
     opacity: 0;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
   }
 }
 
@@ -22,7 +27,6 @@ a:hover {
   text-decoration: underline;
 }
 
-
 span.emoji {
   position: absolute;
   animation-timing-function: ease-in-out;
@@ -34,13 +38,41 @@ span.emoji {
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Fase 7 - Fundo com tons de rosa */
+.bg-pink-light {
+  background: linear-gradient(135deg, #ffe4e1 30%, #ffc1d6 60%, #ffd1dc 100%);
+  background-attachment: fixed;
+}
+
+/* Estilização da Carta */
+div.relative {
+  max-width: 70%; /* Aumenta o tamanho da carta para ocupar mais espaço */
+  min-height: 60vh; /* Faz a carta ocupar pelo menos 60% da altura da tela */
+}
+
+/* Texto da Carta */
+p {
+  font-size: 1.5rem; /* Aumenta o tamanho da fonte */
+  line-height: 2rem;
+  color: #4a2f35; /* Cor suave para leitura */
+}
+
+/* Rosa */
+img {
+  position: absolute;
+  width: 20rem;
+  height: auto;
+}
+
+/* Bordas arredondadas e sombras */
+.shadow-2xl {
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.rounded-3xl {
+  border-radius: 2rem;
 }

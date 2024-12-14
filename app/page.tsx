@@ -255,15 +255,15 @@ export default function Home() {
       )}
 
       {/* Parte 5: Dedicatória */}
-{phase === 5 && (
-  <div className="flex flex-col items-center justify-center text-center min-h-screen space-y-6">
-    {/* Dedicatória */}
-    <h1 className="text-4xl font-bold text-[#887D6E]">
-      Obrigado por tudo que você já fez por mim!  
-    </h1>
-    <p className="text-2xl text-[#B8B8B8]">
-      Meu presente vai ser duas coisinhas simples, mas feitas com bastante carinho.
-    </p>
+      {phase === 5 && (
+        <div className="flex flex-col items-center justify-center text-center min-h-screen space-y-6">
+          {/* Dedicatória */}
+          <h1 className="text-4xl font-bold text-white">
+            Obrigado por tudo que você já fez por mim!  
+          </h1>
+          <p className="text-2xl text-[#B8B8B8]">
+            Meu presente vai ser duas coisinhas simples, mas feitas com bastante carinho.
+          </p>
 
     {/* Link do Spotify */}
     <a

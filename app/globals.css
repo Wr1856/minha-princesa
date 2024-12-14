@@ -13,6 +13,16 @@
   }
 }
 
+a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
 span.emoji {
   position: absolute;
   animation-timing-function: ease-in-out;

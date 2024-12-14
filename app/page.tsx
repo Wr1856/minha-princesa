@@ -166,13 +166,14 @@ export default function Home() {
 
   // Controle de clique para mudar fases
   const handleClick = () => {
-    if (phase < 4) {
+    if (phase < 5) { // Aumenta o limite para 5
       setPhase(phase + 1);
       if (phase === 3) {
         setCurrentIndex(0); // Reseta frases ao entrar na fase 4
       }
     }
   };
+  
 
   return (
     <div
@@ -252,6 +253,38 @@ export default function Home() {
           O simples fato de você ser a Hadassa Goldner Pinheiro, já é o bastante!
         </h1>
       )}
+
+      {/* Parte 5: Dedicatória */}
+{phase === 5 && (
+  <div className="flex flex-col items-center justify-center text-center min-h-screen space-y-6">
+    {/* Dedicatória */}
+    <h1 className="text-4xl font-bold text-[#887D6E]">
+      Obrigado por tudo que você já fez por mim!  
+    </h1>
+    <p className="text-2xl text-[#B8B8B8]">
+      Meu presente vai ser duas coisinhas simples, mas feitas com bastante carinho.
+    </p>
+
+    {/* Link do Spotify */}
+    <a
+      href="https://open.spotify.com/playlist/68RKc2HSjZWdHwZQlZWZha?si=0e3b5584f5574684&pt=12a3342f9c2b9c29797ed6f824a081e2"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-xl text-[#2D1B1B] underline hover:text-[#1B2D35] transition-colors duration-500"
+    >
+      Ouça minha playlist dedicada a você 💖
+    </a>
+
+    {/* Link da Visual Novel */}
+    <a
+      href="#"
+      className="text-xl text-[#2D1B1B] underline hover:text-[#1B2D35] transition-colors duration-500"
+    >
+      Jogue a visual novel que eu criei para você 🌟 (Link fictício)
+    </a>
+  </div>
+)}
+
     </div>
   );
 }
